@@ -34,6 +34,9 @@
 
     <nav class="app-nav">
         <a href="<%= ResolveUrl("~/html1/mainpage.aspx") %>">Main Page</a>
+        <% if (LoggedIn) { %>
+        <a href="<%= ResolveUrl("~/html1/WhoAmI.aspx") %>">Who Am I?</a>
+        <% } %>
         <% if (!LoggedIn) { %>
         <a href="<%= ResolveUrl("~/html1/Form1.aspx") %>">Sign up</a>
         <a href="<%= ResolveUrl("~/html1/Login.aspx") %>">Log in</a>

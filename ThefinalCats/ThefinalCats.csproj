@@ -144,6 +144,7 @@
     <Content Include="html1\Pics\cats2.jpg" />
     <Content Include="html1\Pics\update-banner.jpg" />
     <Content Include="html1\Pics\site-logo.jpg" />
+    <Content Include="html1\Pics\game-whoami.jpg" />
     <Content Include="html1\Pics\breeds\birman.jpg" />
     <Content Include="html1\Pics\breeds\british-longhair.jpg" />
     <Content Include="html1\Pics\breeds\kinkalow.jpg" />
@@ -163,6 +164,7 @@
     <Content Include="html1\Turkish Angora.aspx" />
     <Content Include="html1\Logout.aspx" />
     <Content Include="html1\UpdateUsers.aspx" />
+    <Content Include="html1\WhoAmI.aspx" />
     <Content Include="javaScript\CheckForm.js" />
     <Content Include="LoginAdmin.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -378,6 +380,13 @@
     </Compile>
     <Compile Include="html1\UpdateUsers.aspx.designer.cs">
       <DependentUpon>UpdateUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="html1\WhoAmI.aspx.cs">
+      <DependentUpon>WhoAmI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="html1\WhoAmI.aspx.designer.cs">
+      <DependentUpon>WhoAmI.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginAdmin.aspx.cs">
       <DependentUpon>LoginAdmin.aspx</DependentUpon>
