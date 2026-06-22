@@ -129,9 +129,7 @@
     </form>
 
     <h2><%= sql %></h2>
-    <table style="border:1px solid black; margin:0px auto;">
-        <%= st %>
-    </table>
+    <%= st %>
     <h3><%= msg %></h3>
 
     <script>detectField(1);</script>

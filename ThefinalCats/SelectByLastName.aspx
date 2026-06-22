@@ -16,11 +16,7 @@
     <h1>Users whose last name contains the letter m</h1>
     <h2><%= sqlSelect %></h2>
 
-    <table style="border: 1px solid black; margin: 0px auto;">
-
-        <%= st %>
-
-    </table>
+    <%= st %>
 
     <h3><%= msg %></h3>
 </asp:Content>
