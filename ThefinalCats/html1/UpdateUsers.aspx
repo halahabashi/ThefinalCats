@@ -23,7 +23,7 @@
      <h1> Update Details </h1>
 
     <div class="profileBanner">
-        <img src="<%= ResolveUrl("~/html1/Pics/cats2.jpg") %>" alt="Cats" />
+        <img src="<%= ResolveUrl("~/html1/Pics/update-banner.jpg") %>" alt="Cats" />
     </div>
 
     <form method="post" runat="server" onsubmit="return CheckForm();">

@@ -141,6 +141,11 @@
     <Content Include="html1\Pics\birmancat.jpg" />
     <Content Include="html1\Pics\cat1.jpg" />
     <Content Include="html1\Pics\cats2.jpg" />
+    <Content Include="html1\Pics\update-banner.jpg" />
+    <Content Include="html1\Pics\gpt-image2-cats-a.png" />
+    <Content Include="html1\Pics\gpt-image2-cats-b.png" />
+    <Content Include="html1\Pics\nano-banana-cats-a.png" />
+    <Content Include="html1\Pics\nano-banana-cats-b.png" />
     <Content Include="html1\Russian Blue.aspx" />
     <Content Include="html1\Snowshoe.aspx" />
     <Content Include="html1\Somali.aspx" />
