@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,21 +16,27 @@ namespace ThefinalCats
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Form["submit"] != null)
+            if (Request.Form["submit"] == null)
+                return;
+
+            string fileName = "usersDB.mdf";
+            string tableName = "adminTbl";
+            bool loggedIn = false;
+
+            try
             {
-                //--- שליפת הנתונים מהטופס ---
+                // A fresh database may not contain the admin table yet. Create it
+                // (with a default admin account) so the page works instead of
+                // throwing "Invalid object name 'adminTbl'".
+                EnsureAdminTable(fileName, tableName);
+
                 string mName = Request.Form["mName"];
                 string mPw = Request.Form["mPw"];
-                //--- קישור למסד הנתונים ---
-                string fileName = "usersDB.mdf";
-                string tableName = "adminTbl";
 
-                //--- שאילתת האיחזור ---
                 sqlLogin = $"SELECT * FROM {tableName} WHERE mName = '{mName}' AND mPw = '{mPw}'";
                 DataTable table = Helper.ExecuteDataTable(fileName, sqlLogin);
 
-                int length = table.Rows.Count;
-                if (length == 0)
+                if (table.Rows.Count == 0)
                 {
                     msg += "<div style='text-align:center;'>";
                     msg += "<h3>you are not admin, you dont have the permission to enter this page</h3>";
@@ -39,13 +45,34 @@ namespace ThefinalCats
                 }
                 else
                 {
-                    //--- יצירת Session אובריקט למשתמש ---
                     Session["admin"] = "yes";
                     Session["userFName"] = "admin";
-                    Response.Redirect("~/html1/mainpage.aspx");
+                    loggedIn = true;
                 }
             }
+            catch (Exception)
+            {
+                msg = "<h3 style='text-align:center;'>Login is temporarily unavailable. Please try again later.</h3>";
+            }
+
+            // Redirect outside the try so it isn't swallowed by the catch.
+            if (loggedIn)
+                Response.Redirect("~/html1/mainpage.aspx");
+        }
+
+        // Creates the admin table and a default 'admin' / 'admin' account when
+        // they don't exist yet, so a brand-new database doesn't crash the page.
+        // Change the seeded password (or add admins) via the admin-setup.sql script.
+        private static void EnsureAdminTable(string fileName, string tableName)
+        {
+            string sql =
+                "IF OBJECT_ID('" + tableName + "', 'U') IS NULL " +
+                "BEGIN " +
+                "  CREATE TABLE [" + tableName + "] (mName NVARCHAR(50) NOT NULL, mPw NVARCHAR(50) NOT NULL); " +
+                "  INSERT INTO [" + tableName + "] (mName, mPw) VALUES ('admin', 'admin'); " +
+                "END";
+
+            Helper.DoQuery(fileName, sql);
         }
     }
 }
-    
