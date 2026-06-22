@@ -59,7 +59,10 @@ a:hover { text-decoration: underline; }
 }
 .app-header__title { margin: 0; font-size: 1.6rem; font-weight: 800; }
 .app-header__title small { display:block; font-size:.72rem; font-weight:500; opacity:.85; letter-spacing:.14em; text-transform:uppercase; }
-.app-header__clock { margin-inline-start: auto; text-align: end; font-size: .85rem; opacity: .95; }
+.app-header__clock { text-align: end; font-size: .85rem; opacity: .95; }
+.app-header__right { margin-inline-start: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.app-header__user { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.app-header__hi { font-weight: 700; font-size: .95rem; }
 
 /* ---- Nav ---- */
 .app-nav {
@@ -96,6 +99,14 @@ input[type="submit"], .btn {
 }
 input[type="submit"]:hover, .btn:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); }
 input[type="submit"]:active { transform: translateY(0); }
+
+/* Ghost button — sits on the colored header (Hi / Update / Logout) */
+.btn--ghost {
+    background: rgba(255,255,255,.16); color: #fff;
+    border: 1px solid rgba(255,255,255,.60);
+    padding: 7px 16px; font-size: .85rem; box-shadow: none;
+}
+.btn--ghost:hover { background: rgba(255,255,255,.30); box-shadow: none; text-decoration: none; transform: translateY(-1px); }
 
 /* ---- Text inputs / selects ---- */
 input[type="text"], input[type="password"], input[type="email"], select {
