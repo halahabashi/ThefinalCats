@@ -22,7 +22,9 @@
                 <% if (LoggedIn) { %>
                 <div class="app-header__user">
                     <span class="app-header__hi">Hi <%= Server.HtmlEncode(DisplayName) %></span>
+                    <% if (!IsAdmin) { %>
                     <a class="btn btn--ghost" href="<%= ResolveUrl("~/html1/UpdateUsers.aspx") %>">Update profile</a>
+                    <% } %>
                     <a class="btn btn--ghost" href="<%= ResolveUrl("~/html1/Logout.aspx") %>">Logout</a>
                 </div>
                 <% } %>
