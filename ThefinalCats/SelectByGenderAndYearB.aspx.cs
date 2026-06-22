@@ -20,7 +20,7 @@ namespace ThefinalCats
             {
                 msg += "<div style='text-align: center; color: red;'>";
                 msg += "<h3>you are not admin, you dont have the permission to enter this page</h3>";
-                msg += "<a href='mainpage.aspx'>[   continue   ]</a>";
+                msg += "<a href='" + ResolveUrl("~/html1/mainpage.aspx") + "'>[   continue   ]</a>";
                 msg += "</div>";
             }
             else
