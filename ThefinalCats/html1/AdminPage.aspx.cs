@@ -16,25 +16,24 @@ namespace ThefinalCats
             if (Session["admin"].ToString() == "no")
             {
                 msg += "<div style='text-align: center; color: red;'>";
-                msg += "<h3>אינך מנהל! אין לך הרשאה לצפות בדף זה</h3>";
-                msg += "<a href='mainpage.aspx'>[ המשך ]</a>";
+                msg += "<h3>You are not an admin — you don't have permission to view this page</h3>";
+                msg += "<a href='" + ResolveUrl("~/html1/mainpage.aspx") + "'>[ continue ]</a>";
                 msg += "</div>";
             }
             else
             {
-                msg += "<h3><a href='SimpleQuery.aspx'>שאילתה פשוטה</a></h3>";
-                msg += "<h3><a href='SimpleQuery2.aspx'>שאילתה מורכבת</a></h3>";
-                msg += "<h3><a href='DeleteUser.aspx'>מחיקת משתמש</a></h3>";
-                msg += "<h3><a href='DeleteQuery.aspx'>מחיקת משתמש/ים לפי תנאי</a></h3>";
-                msg += "<h3><a href='ShowTable.aspx'>הצגת טבלת משתמשים</a></h3>";
+                msg += "<h3><a href='" + ResolveUrl("~/SimpleQuery.aspx") + "'>Simple query</a></h3>";
+                msg += "<h3><a href='" + ResolveUrl("~/SimpleQuery2.aspx") + "'>Advanced query</a></h3>";
+                msg += "<h3><a href='" + ResolveUrl("~/DeleteQuery.aspx") + "'>Delete users by condition</a></h3>";
+                msg += "<h3><a href='" + ResolveUrl("~/ShowTable.aspx") + "'>Show users table</a></h3>";
 
                 msg += "<br /><br />";
 
-                msg += "<h3><a href='SelectByLastName.aspx'>כל המשתמשים ששם המשפחה שלהם מכיל האות-ו'</a></h3>";
-                msg += "<h3><a href='SelectByFirstName.aspx'>כל המשתמשים שהשם הפרטי שלהם מתחיל ב-ר'</a></h3>";
+                msg += "<h3><a href='" + ResolveUrl("~/SelectByFirstName.aspx") + "'>Users whose first name starts with the letter a</a></h3>";
+                msg += "<h3><a href='" + ResolveUrl("~/SelectByLastName.aspx") + "'>Users whose last name contains the letter m</a></h3>";
 
-                msg += "<h3><a href='SelectGmailAndCity.aspx'>Gmail כל המשתמשים שגרים בחיפה, נצרת או תל-אביב וכתובתם</a></h3>";
-                msg += "<h3><a href='SelectByGenderAndYearB.aspx'>כל המשתמשים הבנים ששנת הלידה שלהם בין 2005 ל-2008 Gmail</a></h3>";
+                msg += "<h3><a href='" + ResolveUrl("~/SelectGmailAndCity.aspx") + "'>Users living in Haifa, Nazareth or Tel-Aviv with a Gmail address</a></h3>";
+                msg += "<h3><a href='" + ResolveUrl("~/SelectByGenderAndYearB.aspx") + "'>Male users born between 2005 and 2008</a></h3>";
             }
         }
     }

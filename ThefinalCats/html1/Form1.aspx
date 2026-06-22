@@ -3,7 +3,7 @@
     <script src="../javaScript/CheckForm.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>טופס רישום</h1>
+    <h1>Sign-up Form</h1>
 <form method="post" runat="server" onsubmit="return CheckForm();">
     <table>
         <tr>

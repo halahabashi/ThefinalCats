@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,7 +9,7 @@ using DbDemo_MSSite;
 
 namespace ThefinalCats
 {
-    public partial class SelectByFirstName : System.Web.UI.Page
+    public partial class SelectGmailAndCity : System.Web.UI.Page
     {
         public string st = "";
         public string msg = "";
@@ -20,8 +20,8 @@ namespace ThefinalCats
             if (Session["admin"].ToString() == "no")
             {
                 msg += "<div style='text-align: center; color: red;'>";
-                msg += "<h3>you are not admin, you dont have the permission to enter this page</h3>";
-                msg += "<a href='mainpage.aspx'>[   continue   ]</a>";
+                msg += "<h3>You are not an admin — you don't have permission to view this page</h3>";
+                msg += "<a href='" + ResolveUrl("~/html1/mainpage.aspx") + "'>[ continue ]</a>";
                 msg += "</div>";
             }
             else
@@ -30,7 +30,7 @@ namespace ThefinalCats
                 string tableName = "UsersTbl";
 
                 sqlSelect = "SELECT * FROM " + tableName;
-                sqlSelect += " where fName LIKE N'a%'";
+                sqlSelect += " where (city = 'Haifa' OR city = 'Nazareth' OR city = 'TelAviv') AND email LIKE '%gmail%'";
 
                 DataTable table = Helper.ExecuteDataTable(fileName, sqlSelect);
 
@@ -52,7 +52,7 @@ namespace ThefinalCats
                     st += "<th style='text-align: center; border: 1px solid black; width: 100px;'>swimming</th>";
                     st += "<th style='text-align: center; border: 1px solid black; width: 100px;'>dancing</th>";
                     st += "<th style='text-align: center; border: 1px solid black; width: 100px;'>music</th>";
-                    st += "<th style='text-align: center; border: 1px solid black; width: 100px;'>comuter games</th>";
+                    st += "<th style='text-align: center; border: 1px solid black; width: 100px;'>computer games</th>";
                     st += "</tr>";
                 }
 
@@ -74,10 +74,8 @@ namespace ThefinalCats
                     st += "<td style = 'text-align: center; border: 1px solid black;'>" + table.Rows[i]["pw"] + "</td>";
                     st += "</tr>";
                 }
-                msg = "registered:" + length + "people";
+                msg = "registered: " + length + " people";
             }
         }
     }
 }
-        
-    

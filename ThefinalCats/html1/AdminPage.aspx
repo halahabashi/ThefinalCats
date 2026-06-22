@@ -7,7 +7,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>adminstration page</h1>
+    <h1>Admin Panel</h1>
 
-    <div style="text-align:center;"><%= msg %></div>
+    <div class="card" style="max-width:560px; text-align:center;"><%= msg %></div>
 </asp:Content>

@@ -57,7 +57,7 @@ namespace ThefinalCats
 
             // Redirect outside the try so it isn't swallowed by the catch.
             if (loggedIn)
-                Response.Redirect("~/html1/mainpage.aspx");
+                Response.Redirect("~/html1/AdminPage.aspx");
         }
 
         // Creates the admin table and a default 'admin' / 'admin' account when

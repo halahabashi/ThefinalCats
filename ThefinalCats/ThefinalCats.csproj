@@ -225,6 +225,8 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="SelectByFirstName.aspx" />
+    <Content Include="SelectByLastName.aspx" />
+    <Content Include="SelectGmailAndCity.aspx" />
     <Content Include="SelectByGenderAndYearB.aspx" />
     <Content Include="ShowTable.aspx" />
     <Content Include="SimpleQuery.aspx" />
@@ -410,6 +412,20 @@
     </Compile>
     <Compile Include="SelectByFirstName.aspx.designer.cs">
       <DependentUpon>SelectByFirstName.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectByLastName.aspx.cs">
+      <DependentUpon>SelectByLastName.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SelectByLastName.aspx.designer.cs">
+      <DependentUpon>SelectByLastName.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectGmailAndCity.aspx.cs">
+      <DependentUpon>SelectGmailAndCity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SelectGmailAndCity.aspx.designer.cs">
+      <DependentUpon>SelectGmailAndCity.aspx</DependentUpon>
     </Compile>
     <Compile Include="SelectByGenderAndYearB.aspx.cs">
       <DependentUpon>SelectByGenderAndYearB.aspx</DependentUpon>

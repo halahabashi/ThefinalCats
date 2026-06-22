@@ -89,7 +89,7 @@
 
     <form method="post" runat="server">
         <select name="field1" id="field1" onchange="detectField(1);">
-            <option value="">--- ללא סינון נוסף ---</option>
+            <option value="">--- no extra filter ---</option>
             <option value ="lName"> last name</option>
             <option value ="fName"> first name</option>
             <option value ="email"> email</option>
@@ -109,9 +109,9 @@
             <input type="radio" name="cond" value="and" />and
         </div>
         
-        <label>בחרו חתך שני</label>
+        <label>Choose a second filter</label>
         <select name="field2" id="field2" onchange="detectField(2);">
-            <option value="">--- ללא סינון נוסף ---</option>
+            <option value="">--- no extra filter ---</option>
             <option value ="lName"> last name</option>
             <option value ="fName"> first name</option>
             <option value ="email"> email</option>
