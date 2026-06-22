@@ -84,7 +84,7 @@
 
     <h1>displaying data by cross-section</h1>
     <div style="text-align:center;">
-        <a href="AdminPage.aspx">back to the management page</a>
+        <a href="<%= ResolveUrl("~/html1/AdminPage.aspx") %>">back to the management page</a>
     </div>
 
     <form method="post" runat="server">

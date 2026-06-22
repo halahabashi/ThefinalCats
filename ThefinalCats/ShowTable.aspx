@@ -10,7 +10,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1> users table</h1>
     <div style="text-align:center;">
-        <a href ="AdminPage.aspx"> Back to administration</a>
+        <a href ="<%= ResolveUrl("~/html1/AdminPage.aspx") %>"> Back to administration</a>
     </div>
     <h2> <%= sqlSelect %></h2>
     <table style="border:1px solid black; margin:0px auto;">
