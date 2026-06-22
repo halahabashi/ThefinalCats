@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ThefinalCats.Site1" %>
+
+<!DOCTYPE html>
+<style>
+        body {
+            direction: ltr;
+            font-size: 18px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+            table {
+    width: 100%;
+}
+.mpHeader {
+    text-align: center;
+    height: 30px;
+    width: 100%;
+    border: 1px solid silver;
+}
+.mpMenu {
+    text-align: center;
+    font-size: 14px;
+    height: 20px;
+    width: 100%;
+    border: 1px solid silver;
+}
+        .mpMain {
+            height: 400px;
+            width: 100%;
+            border: 1px solid silver;
+        }
+        .mpTable {
+            border: 1px solid silver;
+            width: 100%;
+        }
+        .mpH1 { text-align: center; color: #891a96; }
+        .mpP {
+            text-align: center;
+        }
+        .clock { text-align: center; color: purple; }
+    </style>
+    <script>
+        function myTimer() {
+            var d = new Date();
+            var t1 = d.toLocaleDateString();
+            var t2 = d.toLocaleTimeString();
+            var t= t1 + "<br />" + t2;
+            document.getElementById("myClock").innerHTML = t;
+        }
+        setInterval("myTimer()", 1000);
+    </script>
+
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+   
+<body>
+    <table class="mpTable">
+        <tr class="mpHeader" id="Top">
+          
+            <td style="width:15%; text-align: center; border: 1px solid silver;">
+                
+                </td>
+             <td style="width:70%; text-align: center; border: 1px solid silver;">
+     <h1 style="color:indianred; text-align:center"> Cats 
+        
+         </h1>
+     </td>
+            <td style="width:15%; text-align: center; border: 1px solid silver;">
+                <h3 class="clock" id="myClock"></h3>
+                </td>
+</tr>
+        <tr>
+            <td class="mpMenu" colspan="3">
+               [ <a href="../html1/mainpage.aspx">MainPage</a>]
+                [<a href="../html1/Form1.aspx">Signup</a>]
+                </td>
+            </tr>
+        <tr>
+            <td class="mpMain" colspan="3">
+
+    
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+       
+
+                </td>
+        </tr>
+        <tr class="mpMenu">
+            <td style=""width:15%;"> </td>
+            <td style="width:70%;">
+                <a href="mailTo:halahabashi0904@gmail.com">Write to me</a>
+            </td>
+            <td style="width:15%; text-align:center; direction:ltr;">
+                You are visitor number:
+            </td>
+        </tr>
+
+        </table>
+            
+            
+</body>
