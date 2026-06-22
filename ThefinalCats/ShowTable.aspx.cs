@@ -38,42 +38,8 @@ namespace ThefinalCats
                 if (length == 0) msg = "no registrations;";
                 else
                 {
-                    st += "<tr>";
-                    st += "<th style='text-align: center; border: 1px solid black; width: 100px;'>user name</th>";
-                    st += "<th style='text-align: center; border: 1px solid black; width: 80px;'>password</th>";
-                    st += "<th style='text-align: center; border: 1px solid black; width: 60px;'>last name</th>";
-                    st += "<th style='text-align: center; border: 1px solid black; width: 140px;'>email</th>";
-                    st += "<th style='text-align: center; border: 1px solid black; width: 60px;'>gender</th>";
-                    st += "<th style='text-align: center; border: 1px solid black; width: 60px;'>yearBorn</th>";
-                    st += "<th style='text-align: center; border: 1px solid black; width: 100px;'>city</th>";
-                    st += "<th style='text-align: center; border: 1px solid black; width: 100px;'>prefix</th>";
-                    st += "<th style='text-align: center; border: 1px solid black; width: 140px;'>phone</th>";
-                    st += "<th style='text-align: center; border: 1px solid black;'>FootBall</th>";
-                    st += "<th style='text-align: center; border: 1px solid black;'>swimming</th>";
-                    st += "<th style='text-align: center; border: 1px solid black;'>dancing</th>";
-                    st += "<th style='text-align: center; border: 1px solid black;'>music</th>";
-                    st += "<th style='text-align: center; border: 1px solid black; width: 100px;'>computer games</th>";
-                    st += "</tr>";
-
-                    for (int i = 0; i < length; i++)
-                    {
-                        st += "<tr>";
-                        st += "<td style='text-align: center; border: 1px solid black;'>" + table.Rows[i]["uName"] + "</td>";
-                        st += "<td style='text-align: center; border: 1px solid black;'>" + table.Rows[i]["fName"] + "</td>";
-                        st += "<td style='text-align: center; border: 1px solid black;'>" + table.Rows[i]["lName"] + "</td>";
-                        st += "<td style='text-align: center; border: 1px solid black; width: 60; text-align: left;'>" + table.Rows[i]["email"] + "</td>";
-                        st += "<td style='text-align: center; border: 1px solid black;'>" + table.Rows[i]["yearBorn"] + "</td>";
-                        st += "<td style='text-align: center; border: 1px solid black;'>" + table.Rows[i]["city"] + "</td>";
-                        st += "<td style='text-align: center; border: 1px solid black;'>" + table.Rows[i]["prefix"] + "</td>";
-                        st += "<td style='text-align: center; border: 1px solid black;'>" + table.Rows[i]["phone"] + "</td>";
-                        st += "<td style='text-align: center; border: 1px solid black;'>" + table.Rows[i]["hob1"] + "</td>";
-                        st += "<td style='text-align: center; border: 1px solid black;'>" + table.Rows[i]["hob2"] + "</td>";
-                        st += "<td style='text-align: center; border: 1px solid black;'>" + table.Rows[i]["hob3"] + "</td>";
-                        st += "<td style='text-align: center; border: 1px solid black;'>" + table.Rows[i]["hob4"] + "</td>";
-                        st += "<td style='text-align: center; border: 1px solid black;'>" + table.Rows[i]["pw"] + "</td>";
-                        st += "</tr>";
-                    }
-                    msg = "registered: " + length + "people";
+                    st = Helper.BuildUsersTable(table);
+                    msg = "registered: " + length + " people";
                 }
             }
         }

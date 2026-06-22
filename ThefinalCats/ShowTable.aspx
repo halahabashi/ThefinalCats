@@ -13,9 +13,7 @@
         <a href ="<%= ResolveUrl("~/html1/AdminPage.aspx") %>"> Back to administration</a>
     </div>
     <h2> <%= sqlSelect %></h2>
-    <table style="border:1px solid black; margin:0px auto;">
-        <%= st %>
-    </table>
+    <%= st %>
     <h3><%= msg %></h3>
 
 
