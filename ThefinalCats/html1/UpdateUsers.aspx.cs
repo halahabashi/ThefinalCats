@@ -9,7 +9,7 @@ using DbDemo_MSSite;
 
 namespace ThefinalCats.html1
 {
-    public partial class UpdateUser : System.Web.UI.Page
+    public partial class UpdateUsers : System.Web.UI.Page
     {
         public string msg = "";
         public string sqlMsg = "";
