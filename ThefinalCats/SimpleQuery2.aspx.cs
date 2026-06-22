@@ -11,9 +11,9 @@ namespace ThefinalCats
 {
     public partial class SimpleQuery2 : System.Web.UI.Page
     {
-        public string st = ""; // מחרוזת שתכיל את טבלת התוצאה
-        public string msg = ""; // מחרוזת שתציג כמה מתאימות לשאילתה
-        public string sql = ""; // מחרוזת להצגת השאילתה
+        public string st = ""; // holds the result table
+        public string msg = ""; // shows how many rows match the query
+        public string sql = ""; // holds the query text
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.Form["submit"] == null)
@@ -29,18 +29,18 @@ namespace ThefinalCats
             }
             else
             {
-                //---שמירת שם השדה וערך השדה שנבחר---
+                //--- store the selected field name and value ---
                 string field1 = Request.Form["field1"];
                 string value1 = Request.Form["value1"];
                 string field2 = Request.Form["field2"];
                 string value2 = Request.Form["value2"];
                 string cond = Request.Form["cond"];
 
-                //--- שמירת שם מסד הנתונים ושם הטבלה לשימוש השאילתה ---
+                //--- store the database file and table name for the query ---
                 string fileName = "usersDB.mdf";
                 string tableName = "UsersTbl";
 
-                //--- בניית השאילתה ---
+                //--- build the query ---
                 string sqlSelect1;
                 string sqlSelect2;
 
@@ -96,12 +96,12 @@ namespace ThefinalCats
 
                 if (cond == "or")
                 {
-                    // חובה להשתמש בסוגריים בתוך ה - SQL (חיבור ב-"או")
+                    // parentheses are required inside the SQL (OR condition)
                     sql += "(" + sqlSelect1 + ") OR (" + sqlSelect2 + ")";
                 }
-                else if (cond == "and") // או כל מצב אחר של "גם"
+                else if (cond == "and") // or any other "and" case
                 {
-                    // (חיבור ב-"גם")
+                    // (AND condition)
                     sql += "(" + sqlSelect1 + ") AND (" + sqlSelect2 + ")";
                 }
                 else sql += sqlSelect1;

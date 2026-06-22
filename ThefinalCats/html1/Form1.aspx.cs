@@ -31,10 +31,10 @@ namespace ThefinalCats.html1
                 string hobies = Request.Form["hobies"];
                 string passw = Request.Form["pw"];
 
-                //تحويل سنة الولادة كعدد
+                //convert the birth year to a number
                 int yearB = int.Parse(yearBorn);
 
-                //فحص الهوايات وتحويلها لصدق او كذب
+                //check the hobbies and convert them to T/F
                 char hob1 = 'F', hob2 = 'F', hob3 = 'F', hob4 = 'F' ,hob5 = 'F';
                 if (hobies != null)
                 {
@@ -45,11 +45,11 @@ namespace ThefinalCats.html1
                     if (hobies.Contains("computer games")) hob5 = 'T';
                 }
 
-                //ربط لقاعدة البيانات
+                //connect to the database
                 string fileName = "usersDB.mdf";
                 string tableName = "usersTbl";
 
-                //فحص اذا كان اسم المستخدم مستعمل بقاعدة البيانات
+                //check whether the username is already taken
                 string sqlSelect = "SELECT * FROM " + tableName + " WHERE uName='" + uName + "'";
                 string sqlInsert;
 
@@ -68,7 +68,7 @@ namespace ThefinalCats.html1
 
                 st += "<table dir='ltr' align='center' border='1'>";
 
-                st += "<tr><th colspan='2'>المعطيات التي استقبلناها</th></tr>";
+                st += "<tr><th colspan='2'>Received details</th></tr>";
 
                 st += "<tr><td>User Name:</td><td>" + uName + "</td></tr>";
                 st += "<tr><td>First Name:</td><td>" + fName + "</td></tr>";

@@ -4,7 +4,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Final Cats</title>
+    <title>Whisker World</title>
     <link href="<%= ResolveUrl("~/Content/site-theme.css") %>" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -12,9 +12,9 @@
 <body>
     <header class="app-header">
         <div class="app-header__inner">
-            <img class="app-header__logo" src="<%= ResolveUrl("~/html1/Pics/site-logo.jpg") %>" alt="The Final Cats logo" />
+            <img class="app-header__logo" src="<%= ResolveUrl("~/html1/Pics/site-logo.jpg") %>" alt="Whisker World logo" />
             <h1 class="app-header__title">
-                The Final Cats
+                Whisker World
                 <small>a community of cat lovers</small>
             </h1>
             <div class="app-header__right">
@@ -38,6 +38,9 @@
         <% if (LoggedIn) { %>
         <a href="<%= ResolveUrl("~/html1/WhoAmI.aspx") %>">Who Am I?</a>
         <% } %>
+        <% if (IsAdmin) { %>
+        <a href="<%= ResolveUrl("~/html1/AdminPage.aspx") %>">Admin Panel</a>
+        <% } %>
         <% if (!LoggedIn) { %>
         <a href="<%= ResolveUrl("~/html1/Form1.aspx") %>">Sign up</a>
         <a href="<%= ResolveUrl("~/html1/Login.aspx") %>">Log in</a>
@@ -51,7 +54,7 @@
     </main>
 
     <footer class="app-footer">
-        <span>&copy; The Final Cats</span>
+        <span>&copy; Whisker World</span>
         <a href="mailto:halahabashi0904@gmail.com">Write to me</a>
     </footer>
 

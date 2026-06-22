@@ -11,9 +11,9 @@ namespace ThefinalCats
 {
     public partial class DeleteQuery : System.Web.UI.Page
     {
-        public string st = ""; // מחרוזת שתכיל את טבלת התוצאה
-        public string msg = ""; // מחרוזת שתציג כמה מתאימות לשאילתה
-        public string sql = ""; // מחרוזת להצגת השאילתה
+        public string st = ""; // holds the result table
+        public string msg = ""; // shows how many rows match the query
+        public string sql = ""; // holds the query text
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.Form["submit"] == null)
@@ -29,15 +29,15 @@ namespace ThefinalCats
             }
             else
             {
-                //---שמירת שם השדה וערך השדה שנבחר---
+                //--- store the selected field name and value ---
                 string field = Request.Form["field"];
                 string value = Request.Form["value"];
 
-                //--- שמירת שם מסד הנתונים ושם הטבלה לשימוש השאילתה ---
+                //--- store the database file and table name for the query ---
                 string fileName = "usersDB.mdf";
                 string tableName = "UsersTbl";
 
-                //--- בניית השאילתה ---
+                //--- build the query ---
                 string sqlSelect;
                 string sqlDelete;
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="SelectByFirstName.aspx.cs" Inherits="ThefinalCats.SelectByFirstName" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="SelectGmailAndCity.aspx.cs" Inherits="ThefinalCats.SelectGmailAndCity" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <style>
         h1{text-align:center;color:#d74141;}
@@ -13,7 +13,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Users whose first name starts with the letter a</h1>
+    <h1>Users in Haifa, Nazareth or Tel-Aviv with a Gmail address</h1>
     <h2><%= sqlSelect %></h2>
 
     <table style="border: 1px solid black; margin: 0px auto;">

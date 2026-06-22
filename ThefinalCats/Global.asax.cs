@@ -17,13 +17,13 @@ namespace ThefinalCats
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Application["counter"] = 0;   // אתחול מונה מבקרים
+            Application["counter"] = 0;   // initialize the visitor counter
         }
 
         void Session_Start (object sender , EventArgs e)
         {
-            Session["uName"] = "guest";  // שומר את שם המשתמש
-            Session["userFName"] = "guest";  //שומר  שם פרטי של משתמש
+            Session["uName"] = "guest";  // stores the user name
+            Session["userFName"] = "guest";  //stores the user's first name
             Session["admin"] = "no";
 
         }
@@ -31,8 +31,8 @@ namespace ThefinalCats
 
         void Session_End (object sender, EventArgs e)
         {
-            Session["uName"] = "guest";  // שומר את שם המשתמש
-            Session["userFName"] = "guest";  //שומר  שם פרטי של משתמש
+            Session["uName"] = "guest";  // stores the user name
+            Session["userFName"] = "guest";  //stores the user's first name
             Session["admin"] = "no";
 
         }
