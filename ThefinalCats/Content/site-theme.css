@@ -1,0 +1,133 @@
+/* ============================================================
+   ThefinalCats — shared modern theme
+   Uses logical properties (start/end) for RTL safety.
+   ============================================================ */
+
+:root {
+    --brand:        #7c3aed;   /* violet */
+    --brand-dark:   #5b21b6;
+    --brand-soft:   #ede9fe;
+    --accent:       #db2777;   /* pink accent */
+    --ink:          #1f2430;
+    --muted:        #6b7280;
+    --line:         #e6e3ef;
+    --bg:           #f6f4fb;
+    --card:         #ffffff;
+    --ok:           #16a34a;
+    --danger:       #dc2626;
+    --radius:       14px;
+    --shadow:       0 6px 20px rgba(31, 36, 48, .08);
+    --shadow-lg:    0 14px 40px rgba(91, 33, 182, .16);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(1100px 480px at 100% -10%, var(--brand-soft), transparent 60%),
+        var(--bg);
+    line-height: 1.55;
+}
+
+/* ---- Typography ---- */
+h1 { font-size: 2rem;   font-weight: 800; letter-spacing: -.01em; }
+h2 { font-size: 1.25rem; font-weight: 700; }
+h3 { font-size: 1.05rem; font-weight: 700; }
+a  { color: var(--brand-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- Page shell injected by the master ---- */
+.app-header {
+    position: relative;
+    color: #fff;
+    background: linear-gradient(120deg, var(--brand) 0%, var(--accent) 100%);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+.app-header__inner {
+    display: flex; align-items: center; gap: 18px;
+    max-width: 1080px; margin-inline: auto;
+    padding: 18px 24px;
+}
+.app-header__logo {
+    width: 54px; height: 54px; border-radius: 50%;
+    object-fit: cover; border: 3px solid rgba(255,255,255,.7);
+    box-shadow: 0 4px 12px rgba(0,0,0,.25); flex: 0 0 auto;
+}
+.app-header__title { margin: 0; font-size: 1.6rem; font-weight: 800; }
+.app-header__title small { display:block; font-size:.72rem; font-weight:500; opacity:.85; letter-spacing:.14em; text-transform:uppercase; }
+.app-header__clock { margin-inline-start: auto; text-align: end; font-size: .85rem; opacity: .95; }
+
+/* ---- Nav ---- */
+.app-nav {
+    display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+    background: #fff; border-bottom: 1px solid var(--line);
+    padding: 10px 16px;
+}
+.app-nav a {
+    padding: 7px 14px; border-radius: 999px; font-size: .92rem; font-weight: 600;
+    color: var(--brand-dark); transition: background .15s, color .15s;
+}
+.app-nav a:hover { background: var(--brand-soft); text-decoration: none; }
+
+/* ---- Main content ---- */
+.app-main {
+    max-width: 1080px; margin: 26px auto; padding: 0 20px;
+}
+.app-main h1, .app-main > h2, .app-main > h3 { text-align: center; }
+
+/* ---- Card ---- */
+.card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 26px; margin: 0 auto 22px;
+}
+
+/* ---- Buttons / submit inputs ---- */
+input[type="submit"], .btn {
+    appearance: none; cursor: pointer;
+    background: linear-gradient(120deg, var(--brand), var(--brand-dark));
+    color: #fff; font-weight: 700; font-size: .98rem;
+    border: 0; border-radius: 999px; padding: 11px 30px;
+    box-shadow: var(--shadow); transition: transform .08s, box-shadow .15s;
+}
+input[type="submit"]:hover, .btn:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+input[type="submit"]:active { transform: translateY(0); }
+
+/* ---- Text inputs / selects ---- */
+input[type="text"], input[type="password"], input[type="email"], select {
+    font: inherit; color: var(--ink);
+    padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px;
+    background: #fff; outline: none; transition: border-color .15s, box-shadow .15s;
+}
+input[type="text"]:focus, input[type="password"]:focus, select:focus {
+    border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft);
+}
+
+/* ---- Data tables rendered by the pages ---- */
+.app-main table {
+    border-collapse: collapse; margin: 8px auto; width: auto;
+    background: #fff; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow);
+}
+.app-main th {
+    background: var(--brand) !important; color: #fff !important;
+    border-color: var(--brand-dark) !important; padding: 10px 12px !important;
+    font-weight: 700;
+}
+.app-main td { padding: 9px 12px !important; border-color: var(--line) !important; }
+.app-main tr:nth-child(even) td { background: #faf9fe; }
+
+/* ---- Footer ---- */
+.app-footer {
+    border-top: 1px solid var(--line); background: #fff;
+    color: var(--muted); font-size: .88rem;
+    padding: 16px 24px; margin-top: 30px;
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center;
+}
+
+/* ---- Status messages used by the pages ---- */
+.msg-ok    { color: var(--ok); }
+.msg-error { color: var(--danger); }

@@ -12,17 +12,17 @@
         function detectField() {
             if (document.getElementById("field").value == "gender") {
                 document.getElementById("query").innerHTML =
-                    "<input type='radio' name='value' value='male' checked='checked' />male"
-                "<input type='radio' name='value' value='female' checked='checked' />female"
+                    "<input type='radio' name='value' value='male' checked='checked' />male " +
+                    "<input type='radio' name='value' value='female' />female";
             }
             else {
                 if (document.getElementById("field").value == "yearBorn") {
-                    var yearStr = " < select name ='value'><option value ='0'>select a year </option>";
+                    var yearStr = "<select name='value'><option value='0'>select a year</option>";
                     var currYear = new Date().getFullYear();
                     var fromYear = currYear - 40;
                     var toYear = currYear - 10;
                     for (var i = fromYear; i < toYear; i++)
-                        yearStr += "< option value = '" + i + "'>" + i + " </option>\n";
+                        yearStr += "<option value='" + i + "'>" + i + "</option>\n";
 
                     document.getElementById("query").innerHTML = yearStr + "</select>";
 
@@ -30,7 +30,7 @@
                 else
                     if (document.getElementById("field").value == "prefix") {
 
-                        var prefixStr = "< select name = 'value'>";
+                        var prefixStr = "<select name='value'>";
                         prefixStr += "<option value = '050'>050</option>";
                         prefixStr += "<option value = '052'>052</option>";
                         prefixStr += "<option value = '054'>054</option>";
@@ -48,7 +48,7 @@
                     else
                         if (document.getElementById("field").value == "city") {
 
-                            var prefixStr = "< select name = 'value'>";
+                            var cityStr = "<select name='value'>";
 
                             cityStr += "<option value = 'haifa'>haifa</option>";
                             cityStr += "<option value = 'nazareth'>nazareth</option>";
@@ -67,7 +67,7 @@
                         else
                             if (document.getElementById("field").value == "hobby") {
 
-                                var hobbyStr = "< select name = 'value'>";
+                                var hobbyStr = "<select name='value'>";
 
                                 hobbyStr += "<option value = '1'>football</option>";
                                 hobbyStr += "<option value = '2'>swimming</option>";

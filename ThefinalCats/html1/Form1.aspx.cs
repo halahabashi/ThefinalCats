@@ -17,7 +17,7 @@ namespace ThefinalCats.html1
         {
             if (Request.Form["Submit"] != null)
             {
-                st += "<table dir = 'rtl' style=' border= '1'>";
+                st += "<table dir='rtl' border='1'>";
                 st += "<tr><th colspan= '2'>Recieved Details</th></tr>";
                 string uName = Request.Form["uName"];
                 string fName = Request.Form["fName"];
@@ -70,7 +70,7 @@ namespace ThefinalCats.html1
 
                 st += "<tr><th colspan='2'>المعطيات التي استقبلناها</th></tr>";
 
-                st += "<tr><td>User Name:</td><td>" + uName + "</td></tr>" + uName + "</td></tr>";
+                st += "<tr><td>User Name:</td><td>" + uName + "</td></tr>";
                 st += "<tr><td>First Name:</td><td>" + fName + "</td></tr>";
                 st += "<tr><td>Last Name:</td><td>" + lName + "</td></tr>";
                 st += "<tr><td>Email:</td><td>" + email + "</td></tr>";

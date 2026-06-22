@@ -29,11 +29,11 @@ namespace ThefinalCats.html1
             if (uName == "guest")
             {
                 msg = "You aren't registerd in the system";
-                msg += "<a href = 'LogIn.aspx'><[continue]</a>";
+                msg += "<a href = 'Login.aspx'>[ continue ]</a>";
             }
             else
             {
-                sqlSelect = "SELCET * FROM UsersTbl WHERE uName= '" + uName + "'";
+                sqlSelect = "SELECT * FROM UsersTbl WHERE uName = '" + uName + "'";
                 DataTable table = Helper.ExecuteDataTable(fileName, sqlSelect);
                 sqlMsg = sqlSelect;
 
@@ -41,7 +41,7 @@ namespace ThefinalCats.html1
                 if (length == 0)
                 {
                     msg = "You aren't registerd in the system";
-                    msg += "<a href = 'Login.aspx'><[continue]</a>";
+                    msg += "<a href = 'Login.aspx'>[ continue ]</a>";
                 }
                 else
                 {
@@ -69,9 +69,9 @@ namespace ThefinalCats.html1
                     for (int i = from; i < to; i++)
                     {
                         if (i == yBorn)
-                            yearBorn += $"<option value = '{i}' selected> {i} </option>";
+                            yearBorn += $"<option value='{i}' selected> {i} </option>";
                         else
-                            yearBorn += $"<option value = '" + i + "'>" + i + "</option";
+                            yearBorn += $"<option value='{i}'>{i}</option>";
                     }
                 }
 
@@ -88,7 +88,7 @@ namespace ThefinalCats.html1
                 if (this.IsPostBack)
                 {
                     fName = Request.Form["fName"];
-                    lName = Request.Form["LName"];
+                    lName = Request.Form["lName"];
                     email = Request.Form["email"];
                     gender = Request.Form["gender"];
                     prefix = Request.Form["prefix"];

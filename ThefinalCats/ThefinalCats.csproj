@@ -123,6 +123,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\site-theme.css" />
     <Content Include="Default.aspx" />
     <Content Include="DeleteQuery.aspx" />
     <Content Include="DeleteRecord.aspx" />
@@ -142,6 +143,7 @@
     <Content Include="html1\Pics\cat1.jpg" />
     <Content Include="html1\Pics\cats2.jpg" />
     <Content Include="html1\Pics\update-banner.jpg" />
+    <Content Include="html1\Pics\site-logo.jpg" />
     <Content Include="html1\Pics\gpt-image2-cats-a.png" />
     <Content Include="html1\Pics\gpt-image2-cats-b.png" />
     <Content Include="html1\Pics\nano-banana-cats-a.png" />

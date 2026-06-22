@@ -1,23 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="UpdateUsers.aspx.cs" Inherits="ThefinalCats.html1.UpdateUsers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <style>
-        h1 { text-align:center; color:blueviolet;}
-        h2 { text-align:center; direction:ltr; }
-        h3 { text-align:center; direction:ltr; }
-        td { width: 150px; }
-        th { color:red; font-family:'Guttman Yad-Brush'; }
-        table { margin:0px auto;}
-        cbhob { width: 100px;}
-        .profileBanner { text-align:center; margin:0 auto 24px; }
+        .app-main h1 { color: var(--brand-dark); }
+        .profileBanner { text-align:center; margin: 0 auto 22px; }
         .profileBanner img {
-            width:90%; max-width:460px; height:auto;
-            border-radius:14px;
-            box-shadow:0 6px 18px rgba(0,0,0,.28);
-            object-fit:cover;
+            width:100%; max-width:520px; height:auto;
+            border-radius:16px; box-shadow: var(--shadow-lg);
         }
+        .form-card { max-width: 680px; }
+        .form-card table { width:100%; margin:0; box-shadow:none; background:transparent; }
+        .form-card td { padding:8px 10px; vertical-align:middle; border:0 !important; }
+        .form-card tr > td:first-child { font-weight:600; color: var(--muted); width:175px; text-align:start; }
+        .form-card .cbhob { text-align:center; font-size:.92rem; }
+        .form-actions { text-align:center; padding-top:10px; }
+        .query-echo { color: var(--muted); font-size:.82rem; word-break:break-word; text-align:center; }
     </style>
-                <link href="../Style%20Sheet/StyleSheet.css" rel="stylesheet" />
-    <script src="Scipts/Checkform.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <h1> Update Details </h1>
@@ -26,7 +23,7 @@
         <img src="<%= ResolveUrl("~/html1/Pics/update-banner.jpg") %>" alt="Cats" />
     </div>
 
-    <form method="post" runat="server" onsubmit="return CheckForm();">
+    <form method="post" runat="server" class="card form-card">
         <table border="0">
             <tr>
                 <td> Username </td>
@@ -258,14 +255,14 @@
                 <td><input type="text" id="mRePw" size="50" style="display:none; background-color:silver; font-weight:bold;" disabled="disabled" /></td>
             </tr>
             <tr>
-                <td colspan="2" style="text-align:center;">
-                    <input type="submit" name="submit" value=" Update " />
+                <td colspan="3" class="form-actions">
+                    <input type="submit" name="submit" value="Update" />
                 </td>
             </tr>
         </table>
     </form>
-    <br /><br />
-        <h2><%= sqlMsg %></h2>
-        <h3><%= sqlUpdate %></h3>
-        <h3><%= msg %></h3>
+
+    <h3 class="msg-ok"><%= msg %></h3>
+    <p class="query-echo"><%= sqlMsg %></p>
+    <p class="query-echo"><%= sqlUpdate %></p>
 </asp:Content>
