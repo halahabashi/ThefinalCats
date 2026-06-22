@@ -144,6 +144,15 @@
     <Content Include="html1\Pics\cats2.jpg" />
     <Content Include="html1\Pics\update-banner.jpg" />
     <Content Include="html1\Pics\site-logo.jpg" />
+    <Content Include="html1\Pics\breeds\birman.jpg" />
+    <Content Include="html1\Pics\breeds\british-longhair.jpg" />
+    <Content Include="html1\Pics\breeds\kinkalow.jpg" />
+    <Content Include="html1\Pics\breeds\laperm.jpg" />
+    <Content Include="html1\Pics\breeds\oriental-longhair.jpg" />
+    <Content Include="html1\Pics\breeds\russian-blue.jpg" />
+    <Content Include="html1\Pics\breeds\snowshoe.jpg" />
+    <Content Include="html1\Pics\breeds\somali.jpg" />
+    <Content Include="html1\Pics\breeds\turkish-angora.jpg" />
     <Content Include="html1\Pics\gpt-image2-cats-a.png" />
     <Content Include="html1\Pics\gpt-image2-cats-b.png" />
     <Content Include="html1\Pics\nano-banana-cats-a.png" />

@@ -142,3 +142,12 @@ input[type="text"]:focus, input[type="password"]:focus, select:focus {
 /* ---- Status messages used by the pages ---- */
 .msg-ok    { color: var(--ok); }
 .msg-error { color: var(--danger); }
+
+/* ---- Cat breed pages (photo + description) ---- */
+.breed-photo {
+    display: block; width: 100%; max-width: 760px; height: auto;
+    margin: 0 auto 22px; border-radius: 16px; box-shadow: var(--shadow-lg);
+}
+.app-main p {
+    max-width: 840px; margin-inline: auto; line-height: 1.7;
+}
