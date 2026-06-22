@@ -1,4 +1,4 @@
-﻿s<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="mainpage.aspx.cs" Inherits="ThefinalCats.html1.mainpage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="mainpage.aspx.cs" Inherits="ThefinalCats.html1.mainpage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <meta charset="utf-8" />
  <title>Cats</title>

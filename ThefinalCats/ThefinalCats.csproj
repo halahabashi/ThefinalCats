@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="AdminPage.aspx" />
+    <Content Include="html1\AdminPage.aspx" />
     <Content Include="App_Data\usersDB.mdf" />
     <Content Include="App_Data\usersDB_log.ldf">
       <DependentUpon>usersDB.mdf</DependentUpon>
@@ -217,11 +217,11 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminPage.aspx.cs">
+    <Compile Include="html1\AdminPage.aspx.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminPage.aspx.designer.cs">
+    <Compile Include="html1\AdminPage.aspx.designer.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
