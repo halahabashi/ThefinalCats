@@ -8,13 +8,24 @@
         th { color:red; font-family:'Guttman Yad-Brush'; }
         table { margin:0px auto;}
         cbhob { width: 100px;}
-    </style> 
+        .profileBanner { text-align:center; margin:0 auto 24px; }
+        .profileBanner img {
+            width:90%; max-width:460px; height:auto;
+            border-radius:14px;
+            box-shadow:0 6px 18px rgba(0,0,0,.28);
+            object-fit:cover;
+        }
+    </style>
                 <link href="../Style%20Sheet/StyleSheet.css" rel="stylesheet" />
     <script src="Scipts/Checkform.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <h1> Update Details </h1>
-    
+
+    <div class="profileBanner">
+        <img src="<%= ResolveUrl("~/html1/Pics/cats2.jpg") %>" alt="Cats" />
+    </div>
+
     <form method="post" runat="server" onsubmit="return CheckForm();">
         <table border="0">
             <tr>

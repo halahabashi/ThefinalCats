@@ -112,25 +112,22 @@ namespace ThefinalCats.html1
                     if (hobby.Contains("4")) hob4 = "T";
                     if (hobby.Contains("5")) hob5 = "T";
 
-                    sqlUpdate = "UPDATE UsersTbl ";
-                    sqlUpdate += "WHERE uName = '" + uName + "'";
-                    sqlUpdate += "SET fName =N'" + fName + "', ";
-                    sqlUpdate += "lName = N'" + lName + "', ";
-                    sqlUpdate += "yearBorn = " + yearBrn.ToString() + ", ";
-                    sqlUpdate += "email = '" + email + "', ";
-                    sqlUpdate += "prefix = '" + prefix + "', ";
-                    sqlUpdate += "phone = '" + phone + "', ";
-                    sqlUpdate += "hob1 = '" + hob1 + "', ";
-                    sqlUpdate += "hob2 = '" + hob2 + "', ";
-                    sqlUpdate += "hob3 = '" + hob3 + "', ";
-                    sqlUpdate += "hob4 = '" + hob4 + "', ";
-                    sqlUpdate += "hob4 = '" + hob5 + "', ";
-                    sqlUpdate += "pw = '" + pw + "' ";
-                    sqlUpdate += "gender = '" + gender + "', ";
-                    sqlUpdate += "city = N'" + city + "', ";
-                   
-
-
+                    sqlUpdate = $@"UPDATE UsersTbl SET
+                        fName    = N'{fName}',
+                        lName    = N'{lName}',
+                        yearBorn = {yearBrn},
+                        email    = '{email}',
+                        prefix   = '{prefix}',
+                        phone    = '{phone}',
+                        hob1     = '{hob1}',
+                        hob2     = '{hob2}',
+                        hob3     = '{hob3}',
+                        hob4     = '{hob4}',
+                        hob5     = '{hob5}',
+                        pw       = '{pw}',
+                        gender   = '{gender}',
+                        city     = N'{city}'
+                    WHERE uName = '{uName}'";
 
                     Helper.DoQuery(fileName, sqlUpdate);
 
