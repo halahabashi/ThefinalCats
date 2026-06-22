@@ -29,11 +29,11 @@ namespace ThefinalCats.html1
             if (uName == "guest")
             {
                 msg = "You aren't registerd in the system";
-                msg += "<a href = 'LogIn.aspx'><[continue]</a>";
+                msg += "<a href = 'Login.aspx'>[ continue ]</a>";
             }
             else
             {
-                sqlSelect = "SELCET * FROM UsersTbl WHERE uName= '" + uName + "'";
+                sqlSelect = "SELECT * FROM UsersTbl WHERE uName = '" + uName + "'";
                 DataTable table = Helper.ExecuteDataTable(fileName, sqlSelect);
                 sqlMsg = sqlSelect;
 
@@ -41,7 +41,7 @@ namespace ThefinalCats.html1
                 if (length == 0)
                 {
                     msg = "You aren't registerd in the system";
-                    msg += "<a href = 'Login.aspx'><[continue]</a>";
+                    msg += "<a href = 'Login.aspx'>[ continue ]</a>";
                 }
                 else
                 {
@@ -69,9 +69,9 @@ namespace ThefinalCats.html1
                     for (int i = from; i < to; i++)
                     {
                         if (i == yBorn)
-                            yearBorn += $"<option value = '{i}' selected> {i} </option>";
+                            yearBorn += $"<option value='{i}' selected> {i} </option>";
                         else
-                            yearBorn += $"<option value = '" + i + "'>" + i + "</option";
+                            yearBorn += $"<option value='{i}'>{i}</option>";
                     }
                 }
 
@@ -88,7 +88,7 @@ namespace ThefinalCats.html1
                 if (this.IsPostBack)
                 {
                     fName = Request.Form["fName"];
-                    lName = Request.Form["LName"];
+                    lName = Request.Form["lName"];
                     email = Request.Form["email"];
                     gender = Request.Form["gender"];
                     prefix = Request.Form["prefix"];
@@ -112,25 +112,22 @@ namespace ThefinalCats.html1
                     if (hobby.Contains("4")) hob4 = "T";
                     if (hobby.Contains("5")) hob5 = "T";
 
-                    sqlUpdate = "UPDATE UsersTbl ";
-                    sqlUpdate += "WHERE uName = '" + uName + "'";
-                    sqlUpdate += "SET fName =N'" + fName + "', ";
-                    sqlUpdate += "lName = N'" + lName + "', ";
-                    sqlUpdate += "yearBorn = " + yearBrn.ToString() + ", ";
-                    sqlUpdate += "email = '" + email + "', ";
-                    sqlUpdate += "prefix = '" + prefix + "', ";
-                    sqlUpdate += "phone = '" + phone + "', ";
-                    sqlUpdate += "hob1 = '" + hob1 + "', ";
-                    sqlUpdate += "hob2 = '" + hob2 + "', ";
-                    sqlUpdate += "hob3 = '" + hob3 + "', ";
-                    sqlUpdate += "hob4 = '" + hob4 + "', ";
-                    sqlUpdate += "hob4 = '" + hob5 + "', ";
-                    sqlUpdate += "pw = '" + pw + "' ";
-                    sqlUpdate += "gender = '" + gender + "', ";
-                    sqlUpdate += "city = N'" + city + "', ";
-                   
-
-
+                    sqlUpdate = $@"UPDATE UsersTbl SET
+                        fName    = N'{fName}',
+                        lName    = N'{lName}',
+                        yearBorn = {yearBrn},
+                        email    = '{email}',
+                        prefix   = '{prefix}',
+                        phone    = '{phone}',
+                        hob1     = '{hob1}',
+                        hob2     = '{hob2}',
+                        hob3     = '{hob3}',
+                        hob4     = '{hob4}',
+                        hob5     = '{hob5}',
+                        pw       = '{pw}',
+                        gender   = '{gender}',
+                        city     = N'{city}'
+                    WHERE uName = '{uName}'";
 
                     Helper.DoQuery(fileName, sqlUpdate);
 

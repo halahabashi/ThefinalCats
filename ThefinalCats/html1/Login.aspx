@@ -7,7 +7,6 @@
         h2{text-align:center; direction:ltr;}
         h3{text-align:center; color:maroon;}
     </style>
-            <link href="../Style%20Sheet/StyleSheet.css" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

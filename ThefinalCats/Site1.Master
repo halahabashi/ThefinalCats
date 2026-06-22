@@ -1,104 +1,50 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ThefinalCats.Site1" %>
-
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ThefinalCats.Site1" %>
 <!DOCTYPE html>
-<style>
-        body {
-            direction: ltr;
-            font-size: 18px;
-            margin-left: 50px;
-            margin-right: 50px;
-        }
-            table {
-    width: 100%;
-}
-.mpHeader {
-    text-align: center;
-    height: 30px;
-    width: 100%;
-    border: 1px solid silver;
-}
-.mpMenu {
-    text-align: center;
-    font-size: 14px;
-    height: 20px;
-    width: 100%;
-    border: 1px solid silver;
-}
-        .mpMain {
-            height: 400px;
-            width: 100%;
-            border: 1px solid silver;
-        }
-        .mpTable {
-            border: 1px solid silver;
-            width: 100%;
-        }
-        .mpH1 { text-align: center; color: #891a96; }
-        .mpP {
-            text-align: center;
-        }
-        .clock { text-align: center; color: purple; }
-    </style>
-    <script>
-        function myTimer() {
-            var d = new Date();
-            var t1 = d.toLocaleDateString();
-            var t2 = d.toLocaleTimeString();
-            var t= t1 + "<br />" + t2;
-            document.getElementById("myClock").innerHTML = t;
-        }
-        setInterval("myTimer()", 1000);
-    </script>
-
+<html lang="en">
 <head runat="server">
-    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Final Cats</title>
+    <link href="<%= ResolveUrl("~/Content/site-theme.css") %>" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-   
 <body>
-    <table class="mpTable">
-        <tr class="mpHeader" id="Top">
-          
-            <td style="width:15%; text-align: center; border: 1px solid silver;">
-                
-                </td>
-             <td style="width:70%; text-align: center; border: 1px solid silver;">
-     <h1 style="color:indianred; text-align:center"> Cats 
-        
-         </h1>
-     </td>
-            <td style="width:15%; text-align: center; border: 1px solid silver;">
-                <h3 class="clock" id="myClock"></h3>
-                </td>
-</tr>
-        <tr>
-            <td class="mpMenu" colspan="3">
-               [ <a href="../html1/mainpage.aspx">MainPage</a>]
-                [<a href="../html1/Form1.aspx">Signup</a>]
-                </td>
-            </tr>
-        <tr>
-            <td class="mpMain" colspan="3">
+    <header class="app-header">
+        <div class="app-header__inner">
+            <img class="app-header__logo" src="<%= ResolveUrl("~/html1/Pics/site-logo.jpg") %>" alt="The Final Cats logo" />
+            <h1 class="app-header__title">
+                The Final Cats
+                <small>a community of cat lovers</small>
+            </h1>
+            <div class="app-header__clock"><span id="myClock"></span></div>
+        </div>
+    </header>
 
-    
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-       
+    <nav class="app-nav">
+        <a href="<%= ResolveUrl("~/html1/mainpage.aspx") %>">Main Page</a>
+        <a href="<%= ResolveUrl("~/html1/Form1.aspx") %>">Sign up</a>
+        <a href="<%= ResolveUrl("~/html1/Login.aspx") %>">Log in</a>
+    </nav>
 
-                </td>
-        </tr>
-        <tr class="mpMenu">
-            <td style=""width:15%;"> </td>
-            <td style="width:70%;">
-                <a href="mailTo:halahabashi0904@gmail.com">Write to me</a>
-            </td>
-            <td style="width:15%; text-align:center; direction:ltr;">
-                You are visitor number:
-            </td>
-        </tr>
+    <main class="app-main">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </main>
 
-        </table>
-            
-            
+    <footer class="app-footer">
+        <span>&copy; The Final Cats</span>
+        <a href="mailto:halahabashi0904@gmail.com">Write to me</a>
+    </footer>
+
+    <script>
+        function myTimer() {
+            var d = new Date();
+            var clock = document.getElementById("myClock");
+            if (clock) clock.textContent = d.toLocaleDateString() + " · " + d.toLocaleTimeString();
+        }
+        setInterval(myTimer, 1000);
+        myTimer();
+    </script>
 </body>
+</html>

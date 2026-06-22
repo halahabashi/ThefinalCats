@@ -26,7 +26,7 @@ namespace ThefinalCats
                 string fileName = "usersDB.mdf";
                 string uName = Request.QueryString["uName"].ToString();
                 string sqlDelete = "Delete from usersTbl where uName ='" + uName + "'";
-                Helper.DoQuery(sqlDelete, fileName);
+                Helper.DoQuery(fileName, sqlDelete);
             }
             Response.Redirect("DeleteUser.aspx");
         }
