@@ -35,6 +35,7 @@
         <% if (!LoggedIn) { %>
         <a href="<%= ResolveUrl("~/html1/Form1.aspx") %>">Sign up</a>
         <a href="<%= ResolveUrl("~/html1/Login.aspx") %>">Log in</a>
+        <a href="<%= ResolveUrl("~/LoginAdmin.aspx") %>">Admin login</a>
         <% } %>
     </nav>
 

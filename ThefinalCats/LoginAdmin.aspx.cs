@@ -34,7 +34,7 @@ namespace ThefinalCats
                 {
                     msg += "<div style='text-align:center;'>";
                     msg += "<h3>you are not admin, you dont have the permission to enter this page</h3>";
-                    msg += "<a href='mainpage.aspx'>[   continue   ]</a>";
+                    msg += "<a href='" + ResolveUrl("~/html1/mainpage.aspx") + "'>[   continue   ]</a>";
                     msg += "</div>";
                 }
                 else
@@ -42,7 +42,7 @@ namespace ThefinalCats
                     //--- יצירת Session אובריקט למשתמש ---
                     Session["admin"] = "yes";
                     Session["userFName"] = "admin";
-                    Response.Redirect("mainpage.aspx");
+                    Response.Redirect("~/html1/mainpage.aspx");
                 }
             }
         }
