@@ -131,6 +131,7 @@
     <Content Include="Global.asax" />
     <Content Include="html1\ArrowUpBlue.png" />
     <Content Include="html1\Birman.aspx" />
+    <Content Include="html1\Breeds.aspx" />
     <Content Include="html1\British Longhair.aspx" />
     <Content Include="html1\Form1.aspx" />
     <Content Include="html1\Kinkalow.aspx" />
@@ -289,6 +290,13 @@
     </Compile>
     <Compile Include="html1\Birman.aspx.designer.cs">
       <DependentUpon>Birman.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="html1\Breeds.aspx.cs">
+      <DependentUpon>Breeds.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="html1\Breeds.aspx.designer.cs">
+      <DependentUpon>Breeds.aspx</DependentUpon>
     </Compile>
     <Compile Include="html1\British Longhair.aspx.cs">
       <DependentUpon>British Longhair.aspx</DependentUpon>
