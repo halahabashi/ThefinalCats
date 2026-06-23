@@ -26,7 +26,7 @@ namespace ThefinalCats
                 msg += "<h3><a href='" + ResolveUrl("~/SimpleQuery2.aspx") + "'>Advanced query</a></h3>";
                 msg += "<h3><a href='" + ResolveUrl("~/DeleteQuery.aspx") + "'>Delete users by condition</a></h3>";
                 msg += "<h3><a href='" + ResolveUrl("~/ShowTable.aspx") + "'>Show users table</a></h3>";
-                msg += "<h3><a href='" + ResolveUrl("~/DeleteRecord.aspx") + "'>Delete users </a></h3>";
+                msg += "<h3><a href='" + ResolveUrl("~/DeleteRecord.aspx") + "'>Delete a single user</a></h3>";
                 msg += "<br /><br />";
 
                 msg += "<h3><a href='" + ResolveUrl("~/SelectByFirstName.aspx") + "'>Users whose first name starts with the letter a</a></h3>";

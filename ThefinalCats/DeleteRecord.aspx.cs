@@ -10,25 +10,49 @@ namespace ThefinalCats
 {
     public partial class DeleteRecord : System.Web.UI.Page
     {
-        public string msg = "";
+        public string msg = "";  // status / error message
+        public string st = "";   // table showing the user that was deleted
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["admin"].ToString() == "no")
+            // A username can arrive from the form (POST) or a querystring link
+            // (GET, e.g. DeleteRecord.aspx?uName=foo). When none is supplied we
+            // just render the empty form instead of crashing.
+            string uName = Request["uName"];
+            if (string.IsNullOrWhiteSpace(uName))
+                return;
+
+            // Admin-only. Null-safe: a fresh session may not have the key set yet.
+            string admin = Session["admin"] as string ?? "no";
+            if (admin != "yes")
             {
-                msg += "<h3>";
-                msg += "you are not admin";
-                msg += "you dont have permission to enter the administration page";
-                msg += "</h3>";
-                msg += "";
+                msg += "<div style='text-align:center; color:red;'>";
+                msg += "<h3>You are not an admin — you don't have permission to delete users</h3>";
+                msg += "<a href='" + ResolveUrl("~/html1/mainpage.aspx") + "'>[ continue ]</a>";
+                msg += "</div>";
+                return;
             }
-            else
+
+            string fileName = "usersDB.mdf";
+            string tableName = "UsersTbl";
+            string safeName = uName.Replace("'", "''"); // avoid breaking on quotes
+
+            // Show the user first and only delete when it actually exists.
+            string sqlSelect = "SELECT * FROM " + tableName + " WHERE uName = N'" + safeName + "'";
+            DataTable table = Helper.ExecuteDataTable(fileName, sqlSelect);
+
+            if (table.Rows.Count == 0)
             {
-                string fileName = "usersDB.mdf";
-                string uName = Request.QueryString["uName"].ToString();
-                string sqlDelete = "Delete from usersTbl where uName ='" + uName + "'";
-                Helper.DoQuery(fileName, sqlDelete);
+                msg = "<h3 style='text-align:center;'>No user named \"" + Server.HtmlEncode(uName) + "\" was found.</h3>";
+                return;
             }
-            Response.Redirect("DeleteUser.aspx");
+
+            st = Helper.BuildUsersTable(table);
+
+            string sqlDelete = "DELETE FROM " + tableName + " WHERE uName = N'" + safeName + "'";
+            Helper.DoQuery(fileName, sqlDelete);
+
+            msg = "<h3 style='text-align:center; color:green;'>Deleted user \"" + Server.HtmlEncode(uName) + "\".</h3>";
         }
     }
 }
