@@ -2,9 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         h1 { color:#7c3aed; text-align:center; }
-        .delete-form { text-align:center; margin:18px 0; }
-        .delete-form input[type=text] { padding:8px 10px; }
-        .delete-form input[type=submit] { padding:8px 16px; cursor:pointer; }
+        .del-btn {
+            display:inline-block; padding:6px 14px; background:#e11d48; color:#fff;
+            border-radius:8px; text-decoration:none; font-weight:600;
+        }
+        .del-btn:hover { background:#be123c; }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -13,13 +15,6 @@
         <div style="text-align:center;">
             <a href="<%= ResolveUrl("~/html1/AdminPage.aspx") %>">back to the management page</a>
         </div>
-
-        <form method="post" runat="server" class="delete-form">
-            <label>User name to delete:
-                <input type="text" name="uName" />
-            </label>
-            <input type="submit" name="submit" value="Delete user" />
-        </form>
 
         <%= msg %>
         <%= st %>
