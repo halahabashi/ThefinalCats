@@ -10,8 +10,6 @@
  </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <img src="../pics/cats2.jpg" style="width:300px;" alt="cat" />
-
  <h1 style="color:firebrick; font-weight:bold;">
      Cats
  </h1>
